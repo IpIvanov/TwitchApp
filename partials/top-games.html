@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+	
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-xs-6 col-sm-3 col-md-2 games-banner" ng-repeat="object in data | filter:searchGame" ng-mouseenter="show = true" ng-mouseleave="show = false">
+					
+					<h5 class="viewers" ng-show="show">Viewers: {{object.viewers | number}}</h5>
+					<a href="#"><img ng-src="{{object.game.box.large}}" alt="" /></a>
+					<h5 class="game-name" ng-show="show">{{object.game.name}}</h5>
+					
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<a ng-click="loadGames(number = number + 36)" class="btn btn-default btn-lg btn-block">Load More Games</a>
+						
+			</div>
+		</div>
+	</div>
+</div>

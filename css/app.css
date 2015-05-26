@@ -1,0 +1,88 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+    display: none !important;
+}
+.games-banner:nth-child(odd):hover img, .streams-banner:nth-child(odd):hover img{
+	cursor: pointer;
+	-ms-transform: rotate(-5deg) scale(0.8); /* IE 9 */
+	-webkit-transform: rotate(-5deg) scale(0.8); /* Chrome, Safari, Opera */
+	transform: rotate(-5deg) scale(0.8);
+	-webkit-box-shadow: 4px 1px 12px 0px #fff;
+    -moz-box-shadow: 4px 1px 12px 0px #fff;
+    box-shadow: 4px 1px 12px 0px #fff;
+}
+.games-banner:nth-child(even):hover img, .streams-banner:nth-child(even):hover img{
+	cursor: pointer;
+	-ms-transform: rotate(5deg) scale(0.8); /* IE 9 */
+	-webkit-transform: rotate(5deg) scale(0.8); /* Chrome, Safari, Opera */
+	transform: rotate(5deg) scale(0.8);
+	-webkit-box-shadow: 4px 1px 12px 0px #fff;
+    -moz-box-shadow: 4px 1px 12px 0px #fff;
+    box-shadow: 4px 1px 12px 0px #fff;
+}
+.games-banner img, .streams-banner img{
+	transition: all 0.3s ease 0s;
+	width: 100%;
+	height: auto;
+	position: relative;
+	
+}
+.game-name{
+	width: 80%;
+	position: absolute;
+	bottom: -5px;
+	left: 18px;
+	font-weight: bold;
+	color: white;
+	text-shadow:
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+.viewers, .title-stream{
+	z-index: 99999;
+	width: 95%;
+	position: absolute;
+	top: 25px;
+	left: 17px;
+	font-weight: bold;
+	color: white;
+	text-shadow:
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+.viewers-stream{
+	z-index: 99999;
+	position: absolute;
+	bottom: -5px;
+	right: 18px;
+	font-weight: bold;
+	color: white;
+	text-shadow:
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+.games-banner, .streams-banner{
+	padding-top: 30px;
+}
+.btn-block{
+	margin: 60px 0 60px 0;
+}
+@media screen and (min-width: 1200px) {
+    .streams-banner{
+	height: 252px;
+	}
+}
+.counter{
+	text-align: center;
+}
+.counter h4{
+	margin: 0;
+	margin: 74px 0 74px 0;
+}
