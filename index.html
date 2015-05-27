@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="twitchApp" ng-cloak>
 	<head lang="en">
+	<!-- <base href="#/"> -->
 		<meta charset="UTF-8">
 		<title>Tv Stream</title>
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
@@ -31,7 +32,7 @@
 					<form class="navbar-form navbar-left" role="search">
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search Game" ng-model="searchGame" ng-show="showSearchGames()">
-                        <input type="text" class="form-control" placeholder="Search Streamer" ng-model="searchStream" ng-show="showSearchStreams()">
+                        <input type="text" class="form-control" placeholder="Search Streamer" ng-model="searchStream.channel.display_name" ng-show="showSearchStreams()">
                       </div>
                       
                     </form>

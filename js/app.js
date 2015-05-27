@@ -3,8 +3,8 @@ var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
 
 
-twitchApp.config(['$routeProvider',
-  function($routeProvider) {
+twitchApp.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/bg-streams', {
         templateUrl: 'partials/bg-streams.html',
@@ -29,5 +29,6 @@ twitchApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/'
       });
+      /*$locationProvider.html5Mode(true);*/
   }]);
 
