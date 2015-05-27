@@ -1,15 +1,14 @@
 twitchApp.controller('navController', function($scope, $location) {
 
-
 	$scope.showSearchGames  = function(path){
-		if ($location.path() == '/top-games'){
+		if ($location.path() == '/games'){
 			return true;
 		}
 		else return false;
 	}
 
 	$scope.showSearchStreams  = function(path){
-		if ($location.path() == '/top-streams'){
+		if ($location.path() == '/streams'){
 			return true;
 		}
 		else return false;

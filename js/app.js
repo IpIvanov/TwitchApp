@@ -2,6 +2,7 @@
 var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
 
+
 twitchApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -9,17 +10,21 @@ twitchApp.config(['$routeProvider',
         templateUrl: 'partials/bg-streams.html',
         controller: 'bgStreamsController'
       }).
-      when('/top-games', {
+      when('/games', {
         templateUrl: 'partials/top-games.html',
         controller: 'topGamesController'
       }).
-      when('/top-streams', {
+      when('/streams', {
         templateUrl: 'partials/top-streams.html',
         controller: 'topStreamsController'
       }).
       when('/streams/:name', {
         templateUrl: 'partials/stream.html',
         controller: 'streamController'
+      }).
+      when('/games/:game', {
+        templateUrl: 'partials/game.html',
+        controller: 'gameController'
       }).
       otherwise({
         redirectTo: '/'

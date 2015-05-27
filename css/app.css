@@ -3,6 +3,9 @@
 .ng-hide {
     display: none !important;
 }
+.games-banner:focus {
+  outline: none;
+}
 .games-banner:nth-child(odd):hover img, .streams-banner:nth-child(odd):hover img{
 	cursor: pointer;
 	-ms-transform: rotate(-5deg) scale(0.8); /* IE 9 */
@@ -17,9 +20,9 @@
 	-ms-transform: rotate(5deg) scale(0.8); /* IE 9 */
 	-webkit-transform: rotate(5deg) scale(0.8); /* Chrome, Safari, Opera */
 	transform: rotate(5deg) scale(0.8);
-	-webkit-box-shadow: 4px 1px 12px 0px #fff;
-    -moz-box-shadow: 4px 1px 12px 0px #fff;
-    box-shadow: 4px 1px 12px 0px #fff;
+	-webkit-box-shadow: -4px 1px 12px 0px #fff;
+    -moz-box-shadow: -4px 1px 12px 0px #fff;
+    box-shadow: -4px 1px 12px 0px #fff;
 }
 .games-banner img, .streams-banner img{
 	transition: all 0.3s ease 0s;

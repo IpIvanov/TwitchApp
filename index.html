@@ -25,8 +25,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li ng-class="getClass('/bg-streams')"><a href="#/bg-streams">Bulgarian Streams</a></li>
-						<li ng-class="getClass('/top-streams')"><a href="#/top-streams">Streams</a></li>
-						<li ng-class="getClass('/top-games')"><a href="#/top-games">Games</a></li>
+						<li ng-class="getClass('/top-streams')"><a href="#/streams">Streams</a></li>
+						<li ng-class="getClass('/top-games')"><a href="#/games">Games</a></li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
                       <div class="form-group">
@@ -39,12 +39,14 @@
 			</div>
 		</nav>
 		<ng-view></ng-view>
+		
 		<script src="/lib/angular/docs/components/jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
 		<script src="/lib/angular/docs/components/bootstrap-3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="/lib/angular/angular.js" type="text/javascript" ></script>
 		<script src="/lib/angular/angular-route.min.js" type="text/javascript" ></script>
 		<script src="/js/app.js" type="text/javascript"></script>
 		<script src="/js/controllers.js" type="text/javascript"></script>
+		<script src="/js/directives.js" type="text/javascript"></script>
 		<script src="/js/controllers/navController.js" type="text/javascript"></script>
 	</body>
 </html>
