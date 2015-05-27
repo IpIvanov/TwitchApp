@@ -1,19 +1,32 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+			<h1><img  class="logo" ng-src="{{data.stream.channel.logo}}" alt="" ng-cloak/>   {{data.stream.channel.display_name}} <span class="game">{{data.stream.channel.game}}</span></h1>
+			<h3>{{data.stream.channel.status}}</h3>
+			<p>{{data.stream.viewers | number}} viewers</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8">
+			
 			<div class="embed-responsive embed-responsive-16by9">
 				
-				<twitch-video stream="streamName">
+				<iframe id="player" type="text/html" name="{{streamName}}"
+				ng-src="{{url | trusted}}"
+				frameborder="0">
+				</iframe>
 
-				</twitch-video>
-				<object type="application/x-shockwave-flash" height="378" width="620" data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" bgcolor="#000000">
-					<param name="allowFullScreen" value="true" />
-					<param name="allowScriptAccess" value="always" />
-					<param name="allowNetworking" value="all" />
-					<param name="movie" value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
-					<param name="flashvars" value="channel={{streamName}}&auto_play=true&start_volume=100" />
-				</object>
 			</div>
 		</div>
+		<div class="col-lg-4">
+		<div class="embed-responsive embed-responsive-4by3">
+			<iframe frameborder="0"
+			scrolling="no"
+			id="chat_embed"
+			src="{{chatUrl | trusted}}">
+			</iframe>
+		</div>
+		</div>
+
 	</div>
 </div>

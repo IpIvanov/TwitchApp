@@ -64,12 +64,11 @@ twitchApp.controller('bgStreamsController', function($scope) {
 
 }).controller('streamController', function($scope, $http, $location) {
 	var streamName = $location.path().substring(9).toLowerCase();
-	$scope.streamName = streamName;
-	$http.jsonp('https://api.twitch.tv/kraken/channels/' + streamName + '?callback=JSON_CALLBACK').
+	$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data;
-	    $scope.streamName = data.name;
-	    console.log(streamName);
+	    $scope.url = data.stream.channel.url + '/embed?theme=dark';
+	    $scope.chatUrl = data.stream.channel.url + '/chat?theme=dark';
 	  }).
 	  error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs

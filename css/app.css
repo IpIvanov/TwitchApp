@@ -81,11 +81,32 @@
     .streams-banner{
 	height: 252px;
 	}
+	.container-fluid{
+	width: 95%;
 }
+}
+@media screen and (max-width: 1200px) {
+    .embed-responsive-16by9{
+	margin-bottom: 30px;
+}
+}
+
 .counter{
 	text-align: center;
 }
 .counter h4{
 	margin: 0;
 	margin: 74px 0 74px 0;
+}
+.embed-responsive-4by3{
+	height: 720px;
+}
+img.logo{
+	width: 50px;
+	height: auto;
+}
+h1 span.game{
+	font-size: 75%;
+	float: right;
+	padding-top: 15px;
 }
