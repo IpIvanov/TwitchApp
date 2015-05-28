@@ -2,7 +2,6 @@
 var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
 
-
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
