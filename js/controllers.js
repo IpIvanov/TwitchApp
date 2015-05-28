@@ -7,8 +7,10 @@ twitchApp.controller('bgStreamsController', function($scope, $http, $q, $locatio
     	s6 = $http.jsonp('https://api.twitch.tv/kraken/streams/DooMNoThx?callback=JSON_CALLBACK', {cache: false});
     	s7 = $http.jsonp('https://api.twitch.tv/kraken/streams/LeagueOfLegends_BG?callback=JSON_CALLBACK', {cache: false});
     	s8 = $http.jsonp('https://api.twitch.tv/kraken/streams/tg_p1tbull?callback=JSON_CALLBACK', {cache: false});
+    	s9 = $http.jsonp('https://api.twitch.tv/kraken/streams/rains8?callback=JSON_CALLBACK', {cache: false});
+    	
 
-	$q.all([s1,s2,s3,s4,s5,s6,s7,s8]).then(function(result) {
+	$q.all([s1,s2,s3,s4,s5,s6,s7,s8, s9]).then(function(result) {
 		var tmp = [];
 		angular.forEach(result, function(response) {
 			if(response.data.stream != null){
@@ -100,7 +102,7 @@ twitchApp.controller('bgStreamsController', function($scope, $http, $q, $locatio
 
 }).controller('gameController', function($scope, $http, $location) {
 
-	var gameName = $location.path().substring(5).toLowerCase();
+	var gameName = $location.path().substring(7).toLowerCase();
 	$scope.gameName = gameName;
 	$http.jsonp('https://api.twitch.tv/kraken/search/streams?limit=100&q=' + gameName + '&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {

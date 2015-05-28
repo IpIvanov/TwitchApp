@@ -151,7 +151,7 @@ footer a:hover i.fa-envelope-o{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	min-height: 50px;
+	min-height: 30px;
 	background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
 	background-image: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#484e55), color-stop(60%, #3a3f44), to(#313539));
