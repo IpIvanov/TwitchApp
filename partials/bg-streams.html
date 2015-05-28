@@ -1,9 +1,16 @@
 <div class="container">
 	<div class="row">
-	
+		
 		<div class="col-md-12">
-			<p>Soon...</p>
-			
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 streams-banner" ng-repeat="object in tmpResult" ng-mouseenter="show = true" ng-mouseleave="show = false">
+					<h4 class="title-stream" ng-show="show">{{object.stream.channel.status}}</h4>
+					<h5 class="viewers-stream" ng-show="show">Viewers: {{object.stream.viewers | number}}</h5>
+					<a href="/streams/{{object.stream.channel.name}}"><img ng-src="{{object.stream.preview.medium}}" alt=""/></a>
+					<h4 class="game-name" ng-show="show">{{object.stream.channel.display_name}}</h4>
+				</div>
+			</div>
 		</div>
 	</div>
+	
 </div>

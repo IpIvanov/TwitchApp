@@ -10,8 +10,11 @@ html{
 body{
 	margin-bottom: 50px;
 }
+nav .container{
+	padding: 0;
+}
 .main .container, .main .container-fluid{
-	padding-top: 70px;
+	padding: 70px 0 40px 0;
 }
 .games-banner:focus {
   outline: none;
@@ -124,10 +127,11 @@ h1 span.game{
 /* FOOTER */
 
 .footer{
-	font-size: 18px;
+	font-size: 16px;
 }
 .footer i{
-	font-size: 20px;
+	margin: 5px;
+	font-size: 18px;
 }
 footer a:hover, footer a:focus{
 	text-decoration: none;
@@ -140,7 +144,7 @@ footer a:hover i.fa-envelope-o{
 }
 .footer .container{
 	height: 100%;
-	line-height: 55px;
+	text-align: center;
 }
 
 .footer {

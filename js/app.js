@@ -1,7 +1,6 @@
 // declare a module
 var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
-
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
@@ -26,7 +25,7 @@ twitchApp.config(['$routeProvider', '$locationProvider',
         controller: 'gameController'
       }).
       otherwise({
-        redirectTo: '/'
+        redirectTo: '/games'
       });
       $locationProvider.html5Mode(true);
   }]);

@@ -1,6 +1,25 @@
-twitchApp.controller('bgStreamsController', function($scope) {
-    
+twitchApp.controller('bgStreamsController', function($scope, $http, $q, $location) {
+    var s1  = $http.jsonp('https://api.twitch.tv/kraken/streams/ivan_db?callback=JSON_CALLBACK', {cache: false}),
+    	s2 = $http.jsonp('https://api.twitch.tv/kraken/streams/STEFOXY?callback=JSON_CALLBACK', {cache: false});
+    	s3 = $http.jsonp('https://api.twitch.tv/kraken/streams/ToymakerX?callback=JSON_CALLBACK', {cache: false});
+    	s4 = $http.jsonp('https://api.twitch.tv/kraken/streams/sa1na?callback=JSON_CALLBACK', {cache: false});
+    	s5 = $http.jsonp('https://api.twitch.tv/kraken/streams/bReaker1909?callback=JSON_CALLBACK', {cache: false});
+    	s6 = $http.jsonp('https://api.twitch.tv/kraken/streams/DooMNoThx?callback=JSON_CALLBACK', {cache: false});
+    	s7 = $http.jsonp('https://api.twitch.tv/kraken/streams/LeagueOfLegends_BG?callback=JSON_CALLBACK', {cache: false});
+    	s8 = $http.jsonp('https://api.twitch.tv/kraken/streams/tg_p1tbull?callback=JSON_CALLBACK', {cache: false});
 
+	$q.all([s1,s2,s3,s4,s5,s6,s7,s8]).then(function(result) {
+		var tmp = [];
+		angular.forEach(result, function(response) {
+			if(response.data.stream != null){
+				tmp.push(response.data);
+			}
+    		
+		});
+		return tmp;
+	}).then(function(tmpResult) {
+  		$scope.tmpResult = tmpResult;
+	});
 
 
 

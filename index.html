@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div ng-include="'partials/navbar.html'"></div>
-		<ng-view class="main"></ng-view>
+		<ng-view class="main" ng-cloak></ng-view>
 		<div ng-include="'partials/footer.html'"></div>
 
 
@@ -26,6 +26,6 @@
 		<script src="/js/directives.js" type="text/javascript"></script>
 		<script src="/js/filters.js" type="text/javascript"></script>
 		<script src="/js/controllers/navController.js" type="text/javascript"></script>
-		
+		<!-- <script src="/js/controllers/topGamesController.js"></script> -->
 	</body>
 </html>
