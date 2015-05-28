@@ -8,6 +8,7 @@ twitchApp.controller('bgStreamsController', function($scope) {
 	$http.jsonp('https://api.twitch.tv/kraken/games/top?limit=24&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.top;
+	    $('.btn-lg').show();
 	  }).
 	  error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs
@@ -30,6 +31,7 @@ twitchApp.controller('bgStreamsController', function($scope) {
 	$http.jsonp('https://api.twitch.tv/kraken/streams?limit=100&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.streams;
+	    $('.btn-lg , .counter').show();
 	  }).
 	  error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs
@@ -67,8 +69,8 @@ twitchApp.controller('bgStreamsController', function($scope) {
 	$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data;
-	    $scope.url = data.stream.channel.url + '/embed?theme=dark';
-	    $scope.chatUrl = data.stream.channel.url + '/chat?theme=dark';
+	    $scope.url = data.stream.channel.url + '/embed';
+	    $scope.chatUrl = data.stream.channel.url + '/chat';
 	  }).
 	  error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs
@@ -79,7 +81,7 @@ twitchApp.controller('bgStreamsController', function($scope) {
 
 }).controller('gameController', function($scope, $http, $location) {
 
-	var gameName = $location.path().substring(7).toLowerCase();
+	var gameName = $location.path().substring(5).toLowerCase();
 	$scope.gameName = gameName;
 	$http.jsonp('https://api.twitch.tv/kraken/search/streams?limit=100&q=' + gameName + '&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {

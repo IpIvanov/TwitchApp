@@ -1,9 +1,14 @@
 <div class="container">
 	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<input type="text" class="form-control" placeholder="Search Game" ng-model="searchGame">
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-xs-6 col-sm-3 col-md-2 games-banner" ng-repeat="object in data | filter:searchGame" ng-mouseenter="show = true" ng-mouseleave="show = false">
 			
 			<h5 class="viewers" ng-show="show">Viewers: {{object.viewers | number}}</h5>
-			<a href="#/games/{{object.game.name}}"><img ng-src="{{object.game.box.large}}" alt="" /></a>
+			<a href="/games/{{object.game.name}}"><img ng-src="{{object.game.box.large}}" alt="" /></a>
 			<h5 class="game-name" ng-show="show">{{object.game.name}}</h5>
 			
 		</div>
@@ -16,3 +21,8 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+			
+		
+$('.btn-lg').hide();
+</script>

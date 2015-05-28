@@ -2,7 +2,6 @@
 var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
 
-
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
@@ -29,6 +28,6 @@ twitchApp.config(['$routeProvider', '$locationProvider',
       otherwise({
         redirectTo: '/'
       });
-      /*$locationProvider.html5Mode(true);*/
+      $locationProvider.html5Mode(true);
   }]);
 
