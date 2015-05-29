@@ -1,5 +1,5 @@
-twitchApp.controller('navController', function($scope, $location) {
-
+'use strict';
+twitchApp.controller('navController', ['$scope', '$location' , function($scope, $location) {
 	$scope.showSearchGames  = function(path){
 		if ($location.path() == '/games'){
 			return true;
@@ -22,4 +22,4 @@ twitchApp.controller('navController', function($scope, $location) {
       return ""
     }
 }
-});
+}]);

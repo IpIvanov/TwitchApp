@@ -24,10 +24,12 @@
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-4 streams-banner" ng-repeat="stream in data | filter:searchStream" ng-mouseenter="show = true" ng-mouseleave="show = false">
-					<h4 class="title-stream" ng-show="show">{{stream.channel.status}}</h4>
-					<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.viewers | number}}</h5>
+					
+					
 					<a href="/streams/{{stream.channel.name}}"><img ng-src="{{stream.preview.medium}}" alt=""/></a>
-					<h4 class="game-name" ng-show="show">{{stream.channel.display_name}}</h4>
+					<h4 class="title-stream">{{stream.channel.status}}</h4>
+					<h4 class="channel-name">{{stream.channel.display_name}}</h4>
+					<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.viewers | number}}</h5>
 				</div>
 			</div>
 		</div>

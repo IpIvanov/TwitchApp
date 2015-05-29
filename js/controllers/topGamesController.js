@@ -1,5 +1,6 @@
-angular.module('twitchApp.controllers').controller('topGamesController', function($scope, $http) {
-	$http.jsonp('https://api.twitch.tv/kraken/games/top?limit=24&callback=JSON_CALLBACK').
+'use strict';
+twitchApp.controller('topGamesController', ['$scope', '$http', 'PageTitle', function($scope, $http, PageTitle) {
+	$http.jsonp('https://api.twitch.tv/kraken/games/top?limit=100&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.top;
 	    $('.btn-lg').show();
@@ -8,7 +9,7 @@ angular.module('twitchApp.controllers').controller('topGamesController', functio
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.
 	  });
-	$scope.loadGames = function(number) {
+	/*$scope.loadGames = function(number) {
 	$http.jsonp('https://api.twitch.tv/kraken/games/top?limit=' + number + '&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.top;
@@ -18,6 +19,6 @@ angular.module('twitchApp.controllers').controller('topGamesController', functio
 	    // or server returns response with an error status.
 	  });
 
-	};
-
-});
+	};*/
+	PageTitle.setTitle('Top games');
+}]);

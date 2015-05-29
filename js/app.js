@@ -1,11 +1,16 @@
-// declare a module
+'use strict';
 var twitchApp = angular.module('twitchApp', ['ngRoute']);
 
+twitchApp.controller( 'MainCtrl', function($scope, PageTitle, $location) {
+  $scope.PageTitle = PageTitle;
+  
+});
 
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/bg-streams', {
+        title: 'Product',
         templateUrl: 'partials/bg-streams.html',
         controller: 'bgStreamsController'
       }).
