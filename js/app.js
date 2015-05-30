@@ -3,12 +3,26 @@ var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSan
 
 twitchApp.controller( 'MainCtrl', ['$scope', 'PageTitle', '$location', function($scope, PageTitle, $location) {
   $scope.PageTitle = PageTitle;
+
+    // ===== Scroll to Top ==== 
+  $(window).scroll(function() {
+      if ($(this).scrollTop() >= 150) {        // If page is scrolled more than 50px
+          $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 500);
+  });
 }]);
 
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
-      when('/reddit-news', {
+      when('/reddit', {
         templateUrl: 'partials/reddit.html',
         controller: 'redditController'
       }).

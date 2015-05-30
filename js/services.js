@@ -16,7 +16,6 @@ twitchApp.factory('PageTitle', function(){
   Reddit.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
-    var gameName = '';
     var url = "http://api.reddit.com/r/leagueoflegends/top.json?after=" + this.after + "&jsonp=JSON_CALLBACK";
     $http.jsonp(url).success(function(data) {
       
@@ -32,4 +31,5 @@ twitchApp.factory('PageTitle', function(){
   };
 
   return Reddit;
+
 });
