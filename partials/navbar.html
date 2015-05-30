@@ -11,10 +11,16 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li ng-class="getClass('/reddit')"><a href="/reddit">Reddit</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="news">News <span class="caret"></span></a>
+					<ul class="dropdown-menu" aria-labelledby="news">
+						<li ng-class="getClass('/reddit')"><a href="/reddit">League of legends News</a></li>
+						
+					</ul>
+				</li>
 				<li ng-class="getClass('/bg-streams')"><a href="/bg-streams">Bulgarian Streams</a></li>
-				<li ng-class="getClass('/top-streams')"><a href="/streams">Streams</a></li>
-				<li ng-class="getClass('/top-games')"><a href="/games">Games</a></li>
+				<li ng-class="getClass('/streams')"><a href="/streams">Streams</a></li>
+				<li ng-class="getClass('/games')"><a href="/games">Games</a></li>
 			</ul>
 		</div>
 	</div>

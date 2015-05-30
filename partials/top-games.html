@@ -8,8 +8,8 @@
 		<div class="col-xs-6 col-sm-3 col-md-2 games-banner" ng-repeat="object in data | filter:searchGame" ng-mouseenter="show = true" ng-mouseleave="show = false">
 			
 			
-			<a href="/games/{{object.game.name}}"><img ng-src="{{object.game.box.large}}" alt="" /></a>
-			<h5 class="game-name">{{object.game.name}}</h5>
+			<a href="/games/{{object.game.name}}"><img ng-src="{{object.game.box.large}}" alt="" />
+			<h5 class="game-name">{{object.game.name}}</h5></a>
 			<h5 class="viewers" ng-show="show">Viewers: {{object.viewers | number}}</h5>
 			
 		</div>

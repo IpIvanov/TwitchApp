@@ -1,11 +1,15 @@
 <div class="container reddit">
   <div class="row">
-
     <div class="col-md-12">
-
-      <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
-        <h3>Top Reddit posts / League of legends</h3>
-        <div ng-repeat='item in reddit.items' class="well clearfix">
+    <h3>League of legends News</h3>
+      <ul class="nav nav-tabs">
+        <li class="active" ng-click="showHot()"><a href="#" data-toggle="tab" aria-expanded="true">Hot</a></li>
+        <li ng-click="showNew()"><a href="#" data-toggle="tab" aria-expanded="false">New</a></li>
+        <li ng-click="showRising()"><a href="#" data-toggle="tab" aria-expanded="false">Rising</a></li>
+      </ul>
+      
+      <div infinite-scroll='redditHot.RedditHot()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-hide="hideFirst">
+        <div ng-repeat='item in redditHot.items' class="well clearfix">
           
           <h4 class='title clearfix'>
           
@@ -13,13 +17,60 @@
           <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
           <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
           </h4>
-
           <p>{{item.selftext}}</p>
           <small class="pull-right">by {{item.author}} -
           <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
           </small>
         </div>
-        <div ng-show='reddit.busy'>Loading data...</div>
+        <div ng-show='redditHot.busy'>Loading data...</div>
+      </div>
+      <div infinite-scroll='redditHot.RedditHot()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-show="toggleVar1">
+        <div ng-repeat='item in redditHot.items' class="well clearfix">
+          
+          <h4 class='title clearfix'>
+          
+          <span class='score'>{{item.score}}</span>
+          <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+          <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
+          </h4>
+          <p>{{item.selftext}}</p>
+          <small class="pull-right">by {{item.author}} -
+          <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+          </small>
+        </div>
+        <div ng-show='redditHot.busy'>Loading data...</div>
+      </div>
+      <div infinite-scroll='redditNew.RedditNew()' infinite-scroll-disabled='redditNew.busy' infinite-scroll-distance='1' ng-show="toggleVar2">
+        <div ng-repeat='item in redditNew.items' class="well clearfix">
+          
+          <h4 class='title clearfix'>
+          
+          <span class='score'>{{item.score}}</span>
+          <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+          <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
+          </h4>
+          <p>{{item.selftext}}</p>
+          <small class="pull-right">by {{item.author}} -
+          <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+          </small>
+        </div>
+        <div ng-show='redditNew.busy'>Loading data...</div>
+      </div>
+      <div infinite-scroll='redditRising.RedditRising()' infinite-scroll-disabled='redditRising.busy' infinite-scroll-distance='1' ng-show="toggleVar3">
+        <div ng-repeat='item in redditRising.items' class="well clearfix">
+          
+          <h4 class='title clearfix'>
+          
+          <span class='score'>{{item.score}}</span>
+          <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+          <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
+          </h4>
+          <p>{{item.selftext}}</p>
+          <small class="pull-right">by {{item.author}} -
+          <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+          </small>
+        </div>
+        <div ng-show='redditRising.busy'>Loading data...</div>
       </div>
     </div>
   </div>

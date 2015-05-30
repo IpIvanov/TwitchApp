@@ -160,6 +160,12 @@ h1 span.game{
     width: auto;
     height: 70px;
 }
+.nav.nav-tabs{
+	margin: 20px 0;
+}
+.nav.nav-tabs li a{
+	border-radius: 0;
+}
 /* FOOTER */
 
 .footer{
