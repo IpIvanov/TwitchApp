@@ -1,0 +1,25 @@
+<div class="container reddit">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+        <h1>Top Reddit posts / League of legends</h1>
+        <div ng-repeat='item in reddit.items' class="well clearfix">
+          
+          <h4 class='title clearfix'>
+          
+          <span class='score'>{{item.score}}</span>
+          <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+          <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
+          </h4>
+
+          <p>{{item.selftext}}</p>
+          <small class="pull-right">by {{item.author}} -
+          <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+          </small>
+        </div>
+        <div ng-show='reddit.busy'>Loading data...</div>
+      </div>
+    </div>
+  </div>
+</div>

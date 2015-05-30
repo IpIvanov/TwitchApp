@@ -1,16 +1,18 @@
 'use strict';
-var twitchApp = angular.module('twitchApp', ['ngRoute']);
+var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize']);
 
-twitchApp.controller( 'MainCtrl', function($scope, PageTitle, $location) {
+twitchApp.controller( 'MainCtrl', ['$scope', 'PageTitle', '$location', function($scope, PageTitle, $location) {
   $scope.PageTitle = PageTitle;
-  
-});
+}]);
 
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
+      when('/reddit-news', {
+        templateUrl: 'partials/reddit.html',
+        controller: 'redditController'
+      }).
       when('/bg-streams', {
-        title: 'Product',
         templateUrl: 'partials/bg-streams.html',
         controller: 'bgStreamsController'
       }).

@@ -121,11 +121,45 @@ img.logo{
 	height: auto;
 }
 h1 span.game{
-	font-size: 75%;
-	float: right;
-	padding-top: 15px;
+	font-size: 50%;
+	color: #375a7f;
 }
-
+.reddit .well{
+	border-radius: 0;
+	border-color: #fff;
+}
+.reddit .well:hover{
+	background-color: #375a7f;
+}
+.reddit .well:hover .score{
+	background-color: #303030;
+}
+.score{
+	background-color: #375a7f;
+	padding:5px;
+	margin-right: 10px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow:
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+.reddit .well .title a{
+	text-shadow:
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+.title img[src^="self"], .title img[src^="nsfw"], .title img[src^="default"]{
+    display: none;
+}
+.title img{
+    width: auto;
+    height: 70px;
+}
 /* FOOTER */
 
 .footer{

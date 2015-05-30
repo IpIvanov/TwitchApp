@@ -22,7 +22,9 @@ twitchApp.controller('bgStreamsController', ['$scope', '$http', '$q', '$location
         $http.jsonp('https://api.twitch.tv/kraken/streams/Jemobulas?callback=JSON_CALLBACK', {cache: false}),
         $http.jsonp('https://api.twitch.tv/kraken/streams/joXnka?callback=JSON_CALLBACK', {cache: false}),
         $http.jsonp('https://api.twitch.tv/kraken/streams/xbad_boyxbg?callback=JSON_CALLBACK', {cache: false}),
-        $http.jsonp('https://api.twitch.tv/kraken/streams/denisledeniqt?callback=JSON_CALLBACK', {cache: false})]
+        $http.jsonp('https://api.twitch.tv/kraken/streams/denisledeniqt?callback=JSON_CALLBACK', {cache: false}),
+        $http.jsonp('https://api.twitch.tv/kraken/streams/AFKTV?callback=JSON_CALLBACK', {cache: false})]
+        
 
 	$q.all(bgStreams).then(function(result) {
 		var tmp = [];
