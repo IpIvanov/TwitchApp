@@ -22,6 +22,10 @@ twitchApp.controller( 'MainCtrl', ['$scope', 'PageTitle', '$location', function(
 twitchApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.
+      when('/favorites', {
+        templateUrl: 'partials/favorites.html',
+        controller: 'favoritesController'
+      }).
       when('/reddit', {
         templateUrl: 'partials/reddit.html',
         controller: 'redditController'

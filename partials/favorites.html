@@ -1,0 +1,35 @@
+<script>
+
+</script>
+<style type="text/css">
+.hidden {
+	display: none;
+}
+</style>
+<div class="container">
+	<div class="row">
+	<button class="twitch-connect btn btn-primary pull-right" ng-show="!isAuthenticated">Log In</button>
+			<button class="btn btn-primary pull-right" ng-show="isAuthenticated" id="logout">Log Out</button>
+		<div class="col-md-12">
+			<h1>Hello {{user}}</h1>
+			<button type="">Get</button>
+			<div class="authenticate">
+				<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#">
+			</div>
+			<h2 class="authenticated hidden">Authenticated</h2>
+			<div class="authenticated hidden">
+				<div id="logout">
+					<button class="btn btn-default">Log Out</button>
+				</div>
+				<div id="get-name">
+					<button class="btn btn-default">Get TwitchTV Name</button>
+					<input readonly="readonly" size="50" value="Unknown">
+				</div>
+				<div id="get-stream-key">
+					<button class="btn btn-default">Get TwitchTV Stream Key</button>
+					<input readonly="readonly" size="50" value="Unknown">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
