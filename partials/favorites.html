@@ -8,10 +8,11 @@
 </style>
 <div class="container">
 	<div class="row">
-	<button class="twitch-connect btn btn-primary pull-right" ng-show="!isAuthenticated">Log In</button>
-			<button class="btn btn-primary pull-right" ng-show="isAuthenticated" id="logout">Log Out</button>
 		<div class="col-md-12">
-			<h1>Hello {{user}}</h1>
+			<button class="twitch-connect btn btn-primary pull-right" ng-show="!isAuthenticated">Log In</button>
+			<button class="btn btn-primary pull-right" ng-show="isAuthenticated" id="logout">Log Out: </button>
+			{{user}}
+			
 			<button type="">Get</button>
 			<div class="authenticate">
 				<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#">

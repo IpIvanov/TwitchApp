@@ -127,6 +127,7 @@ h1 span.game{
 .reddit .well{
 	border-radius: 0;
 	border-color: #fff;
+	word-wrap: break-word;
 }
 .reddit .well:hover{
 	background-color: #375a7f;
@@ -204,6 +205,7 @@ footer a:hover i.fa-envelope-o{
 
 /* RETURN TO TOP ARROW */
 #return-to-top {
+	z-index: 999999;
     position: fixed;
     bottom: 50px;
     right: 50px;

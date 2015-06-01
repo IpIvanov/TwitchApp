@@ -26,9 +26,17 @@ twitchApp.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/favorites.html',
         controller: 'favoritesController'
       }).
-      when('/reddit', {
-        templateUrl: 'partials/reddit.html',
-        controller: 'redditController'
+      when('/news/leagueoflegends', {
+        templateUrl: 'partials/reddit_leagueoflegends.html',
+        controller: 'redditLolController'
+      }).
+      when('/news/dota', {
+        templateUrl: 'partials/reddit_dota2.html',
+        controller: 'redditDotaController'
+      }).
+      when('/news/hearthstone', {
+        templateUrl: 'partials/reddit_hearthstone.html',
+        controller: 'redditHsController'
       }).
       when('/bg-streams', {
         templateUrl: 'partials/bg-streams.html',

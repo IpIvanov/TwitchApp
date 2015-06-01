@@ -1,26 +1,28 @@
 'use strict';
 twitchApp.controller('favoritesController', ['$scope', '$location' , function($scope, $location) {
-	$scope.isAuthenticated = false;
+	 $scope.isAuthenticated = false;
     window.CLIENT_ID = 'pw55h8f7lazq5n559fe87lip43mbfzc';
+
     $(function() {
       // Initialize. If we are already logged in, there is no
       // need for the connect button
       Twitch.init({clientId: CLIENT_ID}, function(error, status) {
         if (status.authenticated) {
           // we're logged in :)
-  		  $scope.isAuthenticated = true;
+  		    $scope.isAuthenticated = true;
+          Twitch.api({method: 'user'}, function(error, user) {
+            $('#logout').append(user.display_name);
+            user = user.display_name;
 
-          $('.status input').val('Logged in! Allowed scope: ' + status.scope);
-          // Show the data for logged-in users
-          $scope.status = status.scope;
-          $('.authenticated').removeClass('hidden');
+          });
+         $scope.status = status.scope;
+     
         } else {
-          $('.status input').val('Not Logged in! Better connect with Twitch!');
-          // Show the twitch connect button
+         
           $('.authenticate').removeClass('hidden');
         }
       });
-
+      
 
       $('.twitch-connect').click(function() {
         Twitch.login({
@@ -39,7 +41,7 @@ twitchApp.controller('favoritesController', ['$scope', '$location' , function($s
       $('#get-name button').click(function() {
         Twitch.api({method: 'user'}, function(error, user) {
           $('#get-name input').val(user.display_name);
-          
+          console.log(user.display_name)
         });
       })
 
@@ -50,5 +52,14 @@ twitchApp.controller('favoritesController', ['$scope', '$location' , function($s
       })
 
     });
- 
+    var user = function(){
+      Twitch.api({method: 'user'}, function(error, user) {
+            $('#logout').append(user.display_name);
+           
+            
+            return user.display_name;
+          });
+      return user.display_name;
+    }
+    console.log(user);
 }]);

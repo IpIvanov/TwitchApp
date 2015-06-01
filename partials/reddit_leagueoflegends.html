@@ -6,9 +6,10 @@
         <li class="active" ng-click="showHot()"><a href="#" data-toggle="tab" aria-expanded="true">Hot</a></li>
         <li ng-click="showNew()"><a href="#" data-toggle="tab" aria-expanded="false">New</a></li>
         <li ng-click="showRising()"><a href="#" data-toggle="tab" aria-expanded="false">Rising</a></li>
+        <li ng-click="showTop()"><a href="#" data-toggle="tab" aria-expanded="false">Top</a></li>
       </ul>
       
-      <div infinite-scroll='redditHot.RedditHot()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-hide="hideFirst">
+      <div infinite-scroll='redditHot.Reddit()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-hide="hideFirst">
         <div ng-repeat='item in redditHot.items' class="well clearfix">
           
           <h4 class='title clearfix'>
@@ -24,7 +25,7 @@
         </div>
         <div ng-show='redditHot.busy'>Loading data...</div>
       </div>
-      <div infinite-scroll='redditHot.RedditHot()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-show="toggleVar1">
+      <div infinite-scroll='redditHot.Reddit()' infinite-scroll-disabled='redditHot.busy' infinite-scroll-distance='1' ng-show="toggleVar1">
         <div ng-repeat='item in redditHot.items' class="well clearfix">
           
           <h4 class='title clearfix'>
@@ -40,7 +41,7 @@
         </div>
         <div ng-show='redditHot.busy'>Loading data...</div>
       </div>
-      <div infinite-scroll='redditNew.RedditNew()' infinite-scroll-disabled='redditNew.busy' infinite-scroll-distance='1' ng-show="toggleVar2">
+      <div infinite-scroll='redditNew.Reddit()' infinite-scroll-disabled='redditNew.busy' infinite-scroll-distance='1' ng-show="toggleVar2">
         <div ng-repeat='item in redditNew.items' class="well clearfix">
           
           <h4 class='title clearfix'>
@@ -56,7 +57,7 @@
         </div>
         <div ng-show='redditNew.busy'>Loading data...</div>
       </div>
-      <div infinite-scroll='redditRising.RedditRising()' infinite-scroll-disabled='redditRising.busy' infinite-scroll-distance='1' ng-show="toggleVar3">
+      <div infinite-scroll='redditRising.Reddit()' infinite-scroll-disabled='redditRising.busy' infinite-scroll-distance='1' ng-show="toggleVar3">
         <div ng-repeat='item in redditRising.items' class="well clearfix">
           
           <h4 class='title clearfix'>
@@ -71,6 +72,22 @@
           </small>
         </div>
         <div ng-show='redditRising.busy'>Loading data...</div>
+      </div>
+      <div infinite-scroll='redditTop.Reddit()' infinite-scroll-disabled='redditTop.busy' infinite-scroll-distance='1' ng-show="toggleVar4">
+        <div ng-repeat='item in redditTop.items' class="well clearfix">
+          
+          <h4 class='title clearfix'>
+          
+          <span class='score'>{{item.score}}</span>
+          <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+          <img ng-src="{{item.thumbnail}}" alt="" class="pull-right"/>
+          </h4>
+          <p>{{item.selftext}}</p>
+          <small class="pull-right">by {{item.author}} -
+          <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+          </small>
+        </div>
+        <div ng-show='redditTop.busy'>Loading data...</div>
       </div>
     </div>
   </div>

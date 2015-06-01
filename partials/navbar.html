@@ -10,15 +10,18 @@
 			<a class="navbar-brand" href="/">Stream-Bg</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li ng-class="getClass('/favorites')"><a href="/favorites">Favorites</a></li>
-				<li class="dropdown">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="dropdown" ng-class="getClass('/news/')">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="news">News <span class="caret"></span></a>
 					<ul class="dropdown-menu" aria-labelledby="news">
-						<li ng-class="getClass('/reddit')"><a href="/reddit">League of legends News</a></li>
-						
+						<li><a href="/news/leagueoflegends">League of legends</a></li>
+						<li><a href="/news/hearthstone">Hearthstone</a></li>
+						<li><a href="/news/dota">Dota 2</a></li>
 					</ul>
 				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-class="getClass('/favorites')"><a href="/favorites">Favorites</a></li>
 				<li ng-class="getClass('/bg-streams')"><a href="/bg-streams">Bulgarian Streams</a></li>
 				<li ng-class="getClass('/streams')"><a href="/streams">Streams</a></li>
 				<li ng-class="getClass('/games')"><a href="/games">Games</a></li>
