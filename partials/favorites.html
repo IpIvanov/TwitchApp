@@ -1,34 +1,20 @@
-<script>
-
-</script>
-<style type="text/css">
-.hidden {
-	display: none;
-}
-</style>
 <div class="container">
 	<div class="row">
+		<div class="col-md-4">
+			<input type="text" class="form-control" placeholder="Search Stream" ng-model="searchStream.channel.name">
+		</div>
+		<div class="col-md-4 col-md-offset-4">
+			<button class="twitch-connect btn btn-primary" ng-show="!isAuthenticated">Log In</button>
+			<button class="btn btn-primary" ng-show="isAuthenticated" id="logout">Log Out: </button>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-12">
-			<button class="twitch-connect btn btn-primary pull-right" ng-show="!isAuthenticated">Log In</button>
-			<button class="btn btn-primary pull-right" ng-show="isAuthenticated" id="logout">Log Out: </button>
-			{{user}}
-			
-			<button type="">Get</button>
-			<div class="authenticate">
-				<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#">
-			</div>
-			<h2 class="authenticated hidden">Authenticated</h2>
-			<div class="authenticated hidden">
-				<div id="logout">
-					<button class="btn btn-default">Log Out</button>
-				</div>
-				<div id="get-name">
-					<button class="btn btn-default">Get TwitchTV Name</button>
-					<input readonly="readonly" size="50" value="Unknown">
-				</div>
-				<div id="get-stream-key">
-					<button class="btn btn-default">Get TwitchTV Stream Key</button>
-					<input readonly="readonly" size="50" value="Unknown">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 streams-banner" ng-repeat="stream in data | filter:searchStream" ng-mouseenter="show = true" ng-mouseleave="show = false">
+					<a href="/streams/{{stream.channel.name}}"><img ng-src="{{stream.channel.logo}}" alt=""/>
+						<h4 class="title-stream">{{stream.channel.status}}</h4>
+					<h4 class="channel-name">{{stream.channel.display_name}} playing {{stream.channel.game}}</h4></a>
 				</div>
 			</div>
 		</div>

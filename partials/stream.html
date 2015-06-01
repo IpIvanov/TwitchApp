@@ -1,6 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+			<h3 ng-show="!data.stream.channel">Stream is currently offline!</h3>
 			<h1><img  class="logo" ng-src="{{data.stream.channel.logo}}" alt="" ng-cloak/>   {{data.stream.channel.display_name}} <span class="game"> playing {{data.stream.channel.game}}</span></h1>
 			<h3>{{data.stream.channel.status}}</h3>
 			<p>{{data.stream.viewers | number}} viewers</p>
@@ -16,15 +17,15 @@
 				</iframe>
 				
 			</div>
-					</div>
-			<div class="col-lg-4">
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe frameborder="0"
-							scrolling="no"
-							id="chat_embed"
-							src="{{chatUrl | trusted}}">
-							</iframe>
-						</div>
-			</div>  
+		</div>
+		<div class="col-lg-4">
+			<div class="embed-responsive embed-responsive-4by3">
+				<iframe frameborder="0"
+				scrolling="no"
+				id="chat_embed"
+				src="{{chatUrl | trusted}}">
+				</iframe>
+			</div>
+		</div>
 	</div>
 </div>

@@ -167,6 +167,9 @@ h1 span.game{
 .nav.nav-tabs li a{
 	border-radius: 0;
 }
+.btn-primary{
+	width: 100%;
+}
 /* FOOTER */
 
 .footer{

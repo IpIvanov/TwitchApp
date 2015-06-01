@@ -40,9 +40,7 @@ twitchApp.controller('bgStreamsController', ['$scope', '$http', '$q', '$location
   		$scope.tmpResult = tmpResult;
         
 	});*/
-
-    
-        var twitch_names = 'GamerBGsite,shredderbg,ivan_db,stefoxys,ToymakerX,sa1na,bReaker1909,DooMNoThx,LeagueOfLegends_BG,tg_p1tbull,rains8,annie981,failspotlight,MegaterratronEU,troshikokale,faultles,Cavaradossi94,Zudung,ResolveGamingTV_Darka,NextTVBulgaria,Jemobulas,joXnka,xbad_boyxbg,denisledeniqt,AFKTV'
+    var twitch_names = 'Noobcleaver,GamerBGsite,shredderbg,ivan_db,stefoxys,ToymakerX,sa1na,bReaker1909,DooMNoThx,LeagueOfLegends_BG,tg_p1tbull,rains8,annie981,failspotlight,MegaterratronEU,troshikokale,faultles,Cavaradossi94,Zudung,ResolveGamingTV_Darka,NextTVBulgaria,Jemobulas,joXnka,xbad_boyxbg,denisledeniqt,AFKTV'
     twitch_names.toLowerCase();
     $http.jsonp('https://api.twitch.tv/kraken/streams?channel='+ twitch_names +'&callback=JSON_CALLBACK').
       success(function(data, status, headers, config) {

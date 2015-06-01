@@ -25,7 +25,7 @@ twitchApp.factory('PageTitle', function(){
     $http.jsonp(url).success(function(data) {
       
       var items = data.data.children;
-
+      
       for (var i = 0; i < items.length; i++) {
         this.items.push(items[i].data);
       }
