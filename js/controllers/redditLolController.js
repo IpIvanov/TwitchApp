@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('redditLolController', ['$scope','Reddit', 'PageTitle', function($scope, Reddit, PageTitle ) {
+twitchApp.controller('redditLolController', ['$scope','Reddit', 'PageTitle', '$location', function($scope, Reddit, PageTitle) {
 	
 	$scope.redditHot = new Reddit('hot', 'leagueoflegends');
 	$scope.redditNew = new Reddit('new', 'leagueoflegends');

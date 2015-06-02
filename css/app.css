@@ -170,6 +170,10 @@ h1 span.game{
 .btn-primary{
 	width: 100%;
 }
+.name{
+	line-height: 60px;
+	margin-right: 30px;
+}
 /* FOOTER */
 
 .footer{

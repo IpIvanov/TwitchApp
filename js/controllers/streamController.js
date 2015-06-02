@@ -1,6 +1,7 @@
 'use strict';
 twitchApp.controller('streamController', ['$scope', '$http', '$location', 'PageTitle' , function($scope, $http, $location, PageTitle) {
 	var streamName = $location.path().substring(9).toLowerCase();
+	
 	$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data;
