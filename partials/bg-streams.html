@@ -1,33 +1,22 @@
 <div class="container">
 	<div class="row">
 		
-		<div class="col-md-6">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Twitch</h3>
-					<h3 ng-show="!twitchBgStreams.length">Twitch streams are offline check again later!</h3>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 streams-banner bg" ng-repeat="stream in twitchBgStreams" ng-mouseenter="show = true" ng-mouseleave="show = false">
-					<a href="/streams/twitch/{{stream.channel.name}}"><img ng-src="{{stream.preview.medium}}" alt=""/>
-						<h4 class="title-stream">{{stream.channel.status}}</h4>
-					<h4 class="channel-name">{{stream.channel.display_name}}</h4></a>
-					<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.viewers | number}}</h5>
-				</div>
-			</div>
+		<div class="col-md-12">
 		</div>
-		<div class="col-md-6">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Hitbox</h3>
-					<h3 ng-show="!hitboxBgStreams.length">Hitbox streams are offline check again later!</h3>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 streams-banner bg" ng-repeat="stream in hitboxBgStreams" ng-mouseenter="show = true" ng-mouseleave="show = false" ng-if="stream.media_is_live == '1'">
-					<a href="/streams/hitbox/{{stream.media_name}}"><img ng-src="http://edge.sf.hitbox.tv{{stream.media_thumbnail}}" alt=""/>
-						<h4 class="title-stream">{{stream.media_status}}</h4>
-					<h4 class="channel-name">{{stream.media_display_name}}</h4></a>
-					<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.media_views | number}}</h5>
-				</div>
-			</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 streams-banner bg" ng-repeat="stream in twitchBgStreams" ng-mouseenter="show = true" ng-mouseleave="show = false">
+			<a href="/streams/twitch/{{stream.channel.name}}"><img ng-src="{{stream.preview.medium}}" alt=""/>
+				<h4 class="title-stream">{{stream.channel.status}}</h4>
+			<h4 class="channel-name">{{stream.channel.display_name}}</h4></a>
+			<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.viewers | number}}</h5>
+		</div>
+		
+		<div class="col-md-12">
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 streams-banner bg" ng-repeat="stream in hitboxBgStreams" ng-mouseenter="show = true" ng-mouseleave="show = false" ng-if="stream.media_is_live == '1'">
+			<a href="/streams/hitbox/{{stream.media_name}}"><img ng-src="http://edge.sf.hitbox.tv{{stream.media_thumbnail}}" alt=""/>
+				<h4 class="title-stream">{{stream.media_status}}</h4>
+			<h4 class="channel-name">{{stream.media_display_name}}</h4></a>
+			<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.media_views | number}}</h5>
 		</div>
 	</div>
 </div>
