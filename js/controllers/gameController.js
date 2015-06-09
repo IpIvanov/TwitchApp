@@ -2,8 +2,7 @@
 twitchApp.controller('gameController', ['$scope', '$http', '$location', 'PageTitle' ,function($scope, $http, $location, PageTitle) {
 
 	var gameName = $location.path().substring(7).toLowerCase();
-	$scope.gameName = gameName;
-	$http.jsonp('https://api.twitch.tv/kraken/search/streams?limit=100&q=' + gameName + '&callback=JSON_CALLBACK').
+	$http.jsonp('https://api.twitch.tv/kraken/search/streams?limit=100&offset=0&q=' + gameName + '&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.streams;
 	  }).

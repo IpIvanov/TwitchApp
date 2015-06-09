@@ -99,7 +99,12 @@ nav .container{
 	.container-fluid{
 	width: 95%;
 }
+@media screen and (min-width: 1200px) {
+    .streams-banner.bg{
+	min-height: 220px;
+	}
 }
+
 @media screen and (max-width: 1200px) {
     .embed-responsive-16by9{
 	margin-bottom: 30px;

@@ -1,5 +1,7 @@
 'use strict';
-var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize']);
+var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize', 'ngResource']);
+
+
 
 twitchApp.controller( 'MainCtrl', ['$scope', 'PageTitle', '$location', function($scope, PageTitle, $location) {
   $scope.PageTitle = PageTitle;
@@ -53,6 +55,14 @@ twitchApp.config(['$routeProvider', '$locationProvider',
       when('/streams/:name', {
         templateUrl: 'partials/stream.html',
         controller: 'streamController'
+      }).
+      when('/streams/twitch/:name', {
+        templateUrl: 'partials/stream.html',
+        controller: 'streamTwitchController'
+      }).
+      when('/streams/hitbox/:name', {
+        templateUrl: 'partials/streamHitbox.html',
+        controller: 'streamHitboxController'
       }).
       when('/games/:game', {
         templateUrl: 'partials/game.html',

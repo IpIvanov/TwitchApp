@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			
+			<h1><img  class="logo" ng-src="http://edge.sf.hitbox.tv{{data[0].channel.user_logo}}" alt="" ng-cloak/>   {{data[0].channel.user_name}}</h1>
+			<h3>{{data[0].media_status}}</h3>
+			<p>{{data[0].media_views | number}} viewers</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<!-- <twitch-video stream="streamName"></twitch-video>  -->
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe id="player" type="text/html" name="{{streamName}}"
+				ng-src="{{data[0].channel.channel_link | trusted}}"
+				frameborder="0">
+				</iframe>
+				
+			</div>
+		</div>
+	</div>
+</div>
