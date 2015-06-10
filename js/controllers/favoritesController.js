@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('favoritesController', ['$scope', '$location', '$http' , function($scope, $location, $http) {
+twitchApp.controller('favoritesController', ['$scope', '$location', '$http', 'PageTitle' , function($scope, $location, $http, PageTitle) {
 	 $scope.isAuthenticated = false;
     window.CLIENT_ID = 'pw55h8f7lazq5n559fe87lip43mbfzc';
     var name;
@@ -68,5 +68,5 @@ twitchApp.controller('favoritesController', ['$scope', '$location', '$http' , fu
         window.location = window.location.pathname
       })
     });
-
+    PageTitle.setTitle('Favorites');
 }]);

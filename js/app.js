@@ -41,6 +41,7 @@ twitchApp.config(['$routeProvider', '$locationProvider',
         controller: 'redditHsController'
       }).
       when('/bg-streams', {
+        title: 'Bg Streams',
         templateUrl: 'partials/bg-streams.html',
         controller: 'bgStreamsController'
       }).
@@ -73,4 +74,5 @@ twitchApp.config(['$routeProvider', '$locationProvider',
       });
       $locationProvider.html5Mode(true);
   }]);
+
 
