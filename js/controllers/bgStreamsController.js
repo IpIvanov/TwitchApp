@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('bgStreamsController', ['$scope', '$http', '$q', '$location', 'PageTitle' , function($scope, $http, $q, $location, PageTitle) {
+twitchApp.controller('bgStreamsController', ['$scope', '$http', '$q', '$location' , function($scope, $http, $q, $location) {
     var twitch_names = 'uncensoreda,Noobcleaver,GamerBGsite,shredderbg,ivan_db,ToymakerX,sa1na,bReaker1909,DooMNoThx,LeagueOfLegends_BG,tg_p1tbull,rains8,annie981,failspotlight,MegaterratronEU,troshikokale,faultles,Cavaradossi94,Zudung,ResolveGamingTV_Darka,NextTVBulgaria,Jemobulas,joXnka,xbad_boyxbg,denisledeniqt,AFKTV'
     var hitbox_names = 'failspotlight,Faultles,naspooTV,vilgax0000,Jumperbg,Hornx,VoidBarrier,BGMasterSasuke,gothika47,pifarmy,skyed,ZeroQUsage,leagueoflegendsbulgaria,AmonAglar,Bezhadeath,Samarov,h4cky,ciliumlol,SavageSoul,WeriwdTV,RoyalCozyThere,omgkhazix,Jelibon4e,pslavov,Smanbg,santaaintreal,ipivanov,STEFOXY';
     twitch_names.toLowerCase();
@@ -19,7 +19,5 @@ twitchApp.controller('bgStreamsController', ['$scope', '$http', '$q', '$location
         // called asynchronously if an error occurs
         // or server returns response with an error status.
       });
-      
-    PageTitle.setTitle('Bg-streams');
 
 }]);

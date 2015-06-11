@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('redditLolController', ['$scope','Reddit', 'PageTitle', function($scope, Reddit, PageTitle) {
+twitchApp.controller('redditLolController', ['$scope','Reddit', function($scope, Reddit) {
 	
 	$scope.redditHot = new Reddit('hot', 'leagueoflegends');
 	$scope.redditNew = new Reddit('new', 'leagueoflegends');
@@ -36,8 +36,4 @@ twitchApp.controller('redditLolController', ['$scope','Reddit', 'PageTitle', fun
 		$scope.toggleVar4 = true;
 		$scope.hideFirst = true;
 	};
-
-	PageTitle.setTitle('News/League of legends');
-
-
 }]);

@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('streamController', ['$scope', '$http', '$location', 'PageTitle' , function($scope, $http, $location, PageTitle) {
+twitchApp.controller('streamController', ['$scope', '$http', '$location' , function($scope, $http, $location) {
 	var streamName = $location.path().substring(9).toLowerCase();
 	$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
@@ -11,6 +11,5 @@ twitchApp.controller('streamController', ['$scope', '$http', '$location', 'PageT
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.
 	  });
-	  PageTitle.setTitle(streamName);
 }]);
 

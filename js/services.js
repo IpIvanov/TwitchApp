@@ -1,12 +1,5 @@
 'use strict';
-twitchApp.factory('PageTitle', function(){
-  var title = '';
-  return {
-    title: function() { return title; },
-    setTitle: function(newTitle) { title = newTitle; }
-  };
-
-}).factory('Reddit', function($http) {
+twitchApp.factory('Reddit', function($http) {
 
 
   var Reddit = function(newType, newGame) {

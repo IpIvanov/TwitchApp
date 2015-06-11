@@ -3,8 +3,7 @@ var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSan
 
 
 
-twitchApp.controller( 'MainCtrl', ['$scope', 'PageTitle', '$location', function($scope, PageTitle, $location) {
-  $scope.PageTitle = PageTitle;
+twitchApp.controller( 'MainCtrl', ['$scope', '$location', function($scope, $location) {
 
     // ===== Scroll to Top ==== 
   $(window).scroll(function() {
@@ -26,52 +25,73 @@ twitchApp.config(['$routeProvider', '$locationProvider',
     $routeProvider.
       when('/favorites', {
         templateUrl: 'partials/favorites.html',
-        controller: 'favoritesController'
+        controller: 'favoritesController',
+        title: 'Favorites'
       }).
       when('/news/leagueoflegends', {
         templateUrl: 'partials/reddit_leagueoflegends.html',
-        controller: 'redditLolController'
+        controller: 'redditLolController',
+        title: 'News'
       }).
       when('/news/dota', {
         templateUrl: 'partials/reddit_dota2.html',
-        controller: 'redditDotaController'
+        controller: 'redditDotaController',
+        title: 'News'
       }).
       when('/news/hearthstone', {
         templateUrl: 'partials/reddit_hearthstone.html',
-        controller: 'redditHsController'
+        controller: 'redditHsController',
+        title: 'News'
       }).
       when('/bg-streams', {
         templateUrl: 'partials/bg-streams.html',
-        controller: 'bgStreamsController'
+        controller: 'bgStreamsController',
+        title: 'Bg Streams'
       }).
       when('/games', {
         templateUrl: 'partials/top-games.html',
-        controller: 'topGamesController'
+        controller: 'topGamesController',
+        title: 'Top Games'
       }).
       when('/streams', {
         templateUrl: 'partials/top-streams.html',
-        controller: 'topStreamsController'
+        controller: 'topStreamsController',
+        title: 'Top Streams'
       }).
       when('/streams/:name', {
         templateUrl: 'partials/stream.html',
-        controller: 'streamController'
+        controller: 'streamController',
+        title: 'Video'
       }).
       when('/streams/twitch/:name', {
         templateUrl: 'partials/stream.html',
-        controller: 'streamTwitchController'
+        controller: 'streamTwitchController',
+        title: 'Video'
       }).
       when('/streams/hitbox/:name', {
         templateUrl: 'partials/streamHitbox.html',
-        controller: 'streamHitboxController'
+        controller: 'streamHitboxController',
+        title: 'Video'
       }).
       when('/games/:game', {
         templateUrl: 'partials/game.html',
-        controller: 'gameController'
+        controller: 'gameController',
+        title: 'Game'
       }).
       otherwise({
         redirectTo: '/games'
       });
       $locationProvider.html5Mode(true);
   }]);
+
+twitchApp.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+
+        if (current.hasOwnProperty('$$route')) {
+
+            $rootScope.title = current.$$route.title;
+        }
+    });
+}]);
 
 

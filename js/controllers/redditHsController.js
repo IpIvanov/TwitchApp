@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('redditHsController', ['$scope','Reddit', 'PageTitle', function($scope, Reddit, PageTitle ) {
+twitchApp.controller('redditHsController', ['$scope','Reddit', function($scope, Reddit ) {
 	
 	$scope.redditHot = new Reddit('hot', 'hearthstone');
 	$scope.redditNew = new Reddit('new', 'hearthstone');
@@ -36,8 +36,4 @@ twitchApp.controller('redditHsController', ['$scope','Reddit', 'PageTitle', func
 		$scope.toggleVar4 = true;
 		$scope.hideFirst = true;
 	};
-
-	PageTitle.setTitle('News/Hearthstone');
-
-
 }]);

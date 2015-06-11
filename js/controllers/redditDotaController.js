@@ -1,5 +1,5 @@
 'use strict';
-twitchApp.controller('redditDotaController', ['$scope','Reddit', 'PageTitle', function($scope, Reddit, PageTitle ) {
+twitchApp.controller('redditDotaController', ['$scope','Reddit', function($scope, Reddit ) {
 	
 	$scope.redditHot = new Reddit('hot', 'dota2');
 	$scope.redditNew = new Reddit('new', 'dota2');
@@ -36,8 +36,4 @@ twitchApp.controller('redditDotaController', ['$scope','Reddit', 'PageTitle', fu
 		$scope.toggleVar4 = true;
 		$scope.hideFirst = true;
 	};
-
-	PageTitle.setTitle('News/League of legends');
-
-
 }]);
