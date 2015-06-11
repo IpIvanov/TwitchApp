@@ -4,6 +4,7 @@ twitchApp.controller('streamController', ['$scope', '$http', '$location' , funct
 	$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data;
+	    $scope.viewers = data.stream.viewers;
 	    $scope.url = data.stream.channel.url + '/embed';
 	    $scope.chatUrl = data.stream.channel.url + '/chat';
 	   
@@ -12,12 +13,10 @@ twitchApp.controller('streamController', ['$scope', '$http', '$location' , funct
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.
 	  });
-	$scope.getData = function(){
+	$scope.getViewers = function(){
 		$http.jsonp('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
-	    $scope.data = data;
-	    $scope.url = data.stream.channel.url + '/embed';
-	    $scope.chatUrl = data.stream.channel.url + '/chat';
+	    $scope.viewers = data.stream.viewers;
 	   
 	  }).
 	  error(function(data, status, headers, config) {
@@ -25,6 +24,6 @@ twitchApp.controller('streamController', ['$scope', '$http', '$location' , funct
 	    // or server returns response with an error status.
 	  });
 	};
-	setInterval($scope.getData, 10000);
+	setInterval($scope.getViewers, 1000);
 }]);
 

@@ -4,8 +4,7 @@
 			<h3 ng-show="!data.stream.channel">Stream is currently offline!</h3>
 			<h1><img  class="logo" ng-src="{{data.stream.channel.logo}}" alt="" ng-cloak/>   {{data.stream.channel.display_name}} <span class="game"> playing {{data.stream.channel.game}}</span></h1>
 			<h3>{{data.stream.channel.status}}</h3>
-			<p>{{data.stream.viewers | number}} viewers</p>
-			<p id="viewers"></p>
+			<p>{{viewers | number}} viewers</p>
 		</div>
 	</div>
 	<div class="row">
