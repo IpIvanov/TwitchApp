@@ -9,7 +9,6 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-8">
-			<!-- <twitch-video stream="streamName"></twitch-video>  -->
 			<div class="embed-responsive embed-responsive-16by9">
 				<iframe id="player" type="text/html" name="{{streamName}}"
 				ng-src="{{url | trusted}}"
@@ -21,7 +20,6 @@
 		<div class="col-lg-4">
 			<div class="embed-responsive embed-responsive-4by3">
 				<iframe frameborder="0"
-				scrolling="no"
 				id="chat_embed"
 				src="{{chatUrl | trusted}}">
 				</iframe>

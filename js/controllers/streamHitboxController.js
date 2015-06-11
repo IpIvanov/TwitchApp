@@ -1,6 +1,9 @@
 'use strict';
 twitchApp.controller('streamHitboxController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 	var streamName = $location.path().substring(16).toLowerCase();
+	$scope.streamHitboxName = streamName;
+	$scope.embedUrl = 'http://hitbox.tv/#!/embed/' + streamName + '?autoplay=true';
+	$scope.embedUrlChat = 'http://www.hitbox.tv/embedchat/' + streamName;
 	$http.get('https://api.hitbox.tv/media/live/' + streamName + '?callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	
