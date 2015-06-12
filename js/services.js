@@ -44,14 +44,13 @@ twitchApp.factory('Reddit', function($http) {
   TopStreams.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
-    var url = "https://api.twitch.tv/kraken/streams?limit=30&offset=" + this.after + "&callback=JSON_CALLBACK";
+    var url = "https://api.twitch.tv/kraken/streams?limit=18&offset=" + this.after + "&callback=JSON_CALLBACK";
     $http.jsonp(url).success(function(data) {
       var items = data.streams;
       for (var i = 0; i < items.length; i++) {
         this.items.push(items[i]);
       }
-      this.after += 9;
-      console.log(this.after)
+      this.after += 18;
       this.busy = false;
     }.bind(this));
   };
@@ -71,19 +70,44 @@ twitchApp.factory('Reddit', function($http) {
   TopGames.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
-    var url = "https://api.twitch.tv/kraken/games/top?limit=30&offset=" + this.after + "&callback=JSON_CALLBACK";
+    var url = "https://api.twitch.tv/kraken/games/top?limit=36&offset=" + this.after + "&callback=JSON_CALLBACK";
     $http.jsonp(url).success(function(data) {
       var items = data.top;
       for (var i = 0; i < items.length; i++) {
         this.items.push(items[i]);
       }
-      console.log(items);
-      this.after += 9;
-      console.log(this.after)
+      this.after += 36;
       this.busy = false;
     }.bind(this));
   };
 
   return TopGames;
+
+}).factory('CategoryStreams', function($http) {
+
+
+  var CategoryStreams = function(gameName) {
+    this.items = [];
+    this.busy = false;
+    this.after = 0;
+    this.name = gameName;
+  };
+
+
+  CategoryStreams.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+    var url = "https://api.twitch.tv/kraken/streams?game="+ this.name +"&limit=18&offset=0" + this.after + "&callback=JSON_CALLBACK";
+    $http.jsonp(url).success(function(data) {
+      var items = data.streams;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i]);
+      }
+      this.after += 18;
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return CategoryStreams;
 
 });

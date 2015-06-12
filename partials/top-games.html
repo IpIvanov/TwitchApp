@@ -22,7 +22,7 @@
 			</div>
 	</div> -->
 	<div class="row" infinite-scroll='topGames.nextPage()' infinite-scroll-disabled='topGames.busy' infinite-scroll-distance='1'>
-		<div class="col-xs-6 col-sm-3 col-md-2 games-banner" ng-repeat="object in topGames.items track by $index | filter:searchGame" ng-mouseenter="show = true" ng-mouseleave="show = false">
+		<div class="col-xs-6 col-sm-3 col-md-2 games-banner" ng-repeat="object in topGames.items track by $index" ng-mouseenter="show = true" ng-mouseleave="show = false">
 			
 			
 			<a href="/games/{{object.game.name}}"><img ng-src="{{object.game.box.large}}" alt="" />
@@ -32,8 +32,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-			
-		
-$('.btn-lg').hide();
-</script>
