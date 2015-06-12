@@ -5,7 +5,6 @@ twitchApp.controller('redditLolController', ['$scope','Reddit', function($scope,
 	$scope.redditNew = new Reddit('new', 'leagueoflegends');
 	$scope.redditRising = new Reddit('rising', 'leagueoflegends');
 	$scope.redditTop = new Reddit('top', 'leagueoflegends');
-
 	$scope.showHot = function() {
 		$scope.toggleVar1 = true;
 		$scope.toggleVar2 = false;

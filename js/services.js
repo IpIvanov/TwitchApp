@@ -31,4 +31,59 @@ twitchApp.factory('Reddit', function($http) {
 
   return Reddit;
 
+}).factory('TopStreams', function($http) {
+
+
+  var TopStreams = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = 0;
+  };
+
+
+  TopStreams.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+    var url = "https://api.twitch.tv/kraken/streams?limit=30&offset=" + this.after + "&callback=JSON_CALLBACK";
+    $http.jsonp(url).success(function(data) {
+      var items = data.streams;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i]);
+      }
+      this.after += 9;
+      console.log(this.after)
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return TopStreams;
+
+}).factory('TopGames', function($http) {
+
+
+  var TopGames = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = 0;
+  };
+
+
+  TopGames.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+    var url = "https://api.twitch.tv/kraken/games/top?limit=30&offset=" + this.after + "&callback=JSON_CALLBACK";
+    $http.jsonp(url).success(function(data) {
+      var items = data.top;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i]);
+      }
+      console.log(items);
+      this.after += 9;
+      console.log(this.after)
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return TopGames;
+
 });

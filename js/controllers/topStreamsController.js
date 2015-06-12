@@ -1,6 +1,6 @@
 'use strict';
-twitchApp.controller('topStreamsController', ['$scope', '$http', function($scope, $http) {
-    $scope.counter = 1;
+twitchApp.controller('topStreamsController', ['$scope', '$http','TopStreams', function($scope, $http, TopStreams) {
+    /*$scope.counter = 1;
 	$http.jsonp('https://api.twitch.tv/kraken/streams?limit=100&callback=JSON_CALLBACK').
 	  success(function(data, status, headers, config) {
 	    $scope.data = data.streams;
@@ -32,5 +32,6 @@ twitchApp.controller('topStreamsController', ['$scope', '$http', function($scope
 	    // or server returns response with an error status.
 	  });
 
-	};
+	};*/
+	$scope.topStreams = new TopStreams();
 }]);
