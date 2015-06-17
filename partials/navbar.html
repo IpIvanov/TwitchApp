@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-controller="navController">
+<nav class="navbar navbar-default" ng-controller="navController">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -22,10 +22,17 @@
 			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li ng-class="getClass('/hitbox')"><a href="/hitbox">Hitbox Streams</a></li>
+				
 				<li ng-class="getClass('/favorites')"><a href="/favorites">Favorites</a></li>
-				<li ng-class="getClass('/bg-streams')"><a href="/bg-streams">Bulgarian Streams</a></li>
-				<li ng-class="getClass('/streams')"><a href="/streams">Streams</a></li>
+				<li class="dropdown" ng-class="getClass('/streams/')">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="streams">Streams <span class="caret"></span></a>
+					<ul class="dropdown-menu" aria-labelledby="streams">
+						<li ng-class="getClass('/bg-streams')"><a href="/bg-streams">Bulgarian Streams</a></li>
+						<li ng-class="getClass('/streams')"><a href="/streams">Twitch</a></li>
+						<li ng-class="getClass('/hitbox')"><a href="/hitbox">Hitbox</a></li>
+					</ul>
+				</li>
+				
 				<li ng-class="getClass('/games')"><a href="/games">Games</a></li>
 			</ul>
 		</div>

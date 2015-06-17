@@ -3,6 +3,78 @@
 .ng-hide {
     display: none !important;
 }
+/* NAVBAR */
+.navbar-default {
+  background-color: #000000;
+  border-color: #000000;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #20a124;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #20a124;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #20a124;
+  background-color: #000000;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #20a124;
+  background-color: #000000;
+}
+.navbar-default .navbar-toggle {
+  border-color: #000000;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #000000;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #20a124;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #20a124;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #20a124;
+    background-color: #000000;
+  }
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+  text-decoration: none;
+  color: #20a124;
+  background-color: transparent;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  color: #20a124;
+  text-decoration: none;
+  outline: 0;
+  background-color: transparent;
+}
+/* NAVBAR */
 html{
 	position: relative;
     min-height: 100%;
@@ -17,7 +89,7 @@ nav .container{
 	padding: 0;
 }
 .main .container, .main .container-fluid{
-	padding: 70px 0 40px 0;
+	padding-bottom: 40px;
 }
 .games-banner:focus {
   outline: none;
@@ -181,24 +253,27 @@ h1 span.game{
 /* FOOTER */
 
 .footer{
-	font-size: 16px;
+	font-size: 12px;
 }
 .footer i{
-	margin: 5px;
-	font-size: 18px;
+	margin: 3px;
+	font-size: 12px;
+}
+footer a{
+	color: rgb(255, 255, 255);;
 }
 footer a:hover, footer a:focus{
 	text-decoration: none;
 }
 footer a:hover i.fa-facebook-square{
-	color: #fff;
+	color: #20a124;
 }
 footer a:hover i.fa-envelope-o{
-	color: #fff;
+	color: #20a124;
 }
-.footer .container{
+.footer .container-fluid{
 	height: 100%;
-	text-align: center;
+	text-align: right;
 }
 
 .footer {
@@ -206,7 +281,7 @@ footer a:hover i.fa-envelope-o{
 	bottom: 0;
 	width: 100%;
 	min-height: 30px;
-	background-color: #375a7f;
+	background-color: transparent;
   	border-color: transparent;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	vertical-align: middle;
@@ -220,8 +295,7 @@ footer a:hover i.fa-envelope-o{
     position: fixed;
     bottom: 50px;
     right: 50px;
-    background: #375a7f;
-    background: #375a7f;
+    background: transparent;
     width: 50px;
     height: 50px;
     display: block;
@@ -235,6 +309,7 @@ footer a:hover i.fa-envelope-o{
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    border: 1px solid #fff;
 }
 #return-to-top i {
     color: #fff;
@@ -253,52 +328,7 @@ footer a:hover i.fa-envelope-o{
     background: rgba(0, 0, 0, 0.9);
 }
 #return-to-top:hover i {
-    color: #0ce3ac;
-    top: 5px;
+    color: #20a124;
+    top: 10px;
 }
 /* RETURN TO TOP ARROW */
-
-/* AUTOCOMPLETE */
-
-.autocomplete{
-  width: 100%;
-  position: relative;
-}
-
-.autocomplete input{
-  font-size: 1.2em;
-  width: 100%;
-  padding:0.4em;
-}
-
-.autocomplete ul{
-  position: absolute;
-  left: 0;
-  width: 100%;
-  border-left: 1px solid #888;
-  border-right: 1px solid #888;
-  border-bottom: 1px solid #888;
-  z-index: 1;
-}
-
-.autocomplete li{
-  text-align: left;
-  list-style:none;
-  width: 100%;
-  padding:0.4em;
-  background-color: #fff;
-}
-
-.autocomplete li.active{
-  width: 100%;
-  background-color: #4bf;
-}
-
-.autocomplete .highlight {
-  background-color: #E2E2E2;
-}
-
-.autocomplete li.active .highlight {
-  background: #666;
-  color: #fff;
-}
