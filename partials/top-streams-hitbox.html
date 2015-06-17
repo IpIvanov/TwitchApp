@@ -1,0 +1,17 @@
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 streams-banner" ng-repeat="stream in data" ng-mouseenter="show = true" ng-mouseleave="show = false" >
+					<a href="/streams/hitbox/{{stream.media_user_name}}"><img ng-src="http://edge.sf.hitbox.tv/{{stream.media_thumbnail_large}}" alt=""/>
+					<h4 class="title-stream">{{stream.media_status}}</h4>
+					<h4 class="channel-name">{{stream.media_user_name}}</h4></a>
+					<h5 class="viewers-stream" ng-show="show">Viewers: {{stream.media_views | number}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

@@ -1,5 +1,5 @@
 'use strict';
-var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize', 'ngResource']);
+var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize', 'ngResource', 'ui.bootstrap']);
 
 
 
@@ -72,6 +72,11 @@ twitchApp.config(['$routeProvider', '$locationProvider',
         templateUrl: 'partials/streamHitbox.html',
         controller: 'streamHitboxController',
         title: 'Video'
+      }).
+      when('/hitbox', {
+        templateUrl: 'partials/top-streams-hitbox.html',
+        controller: 'topHitboxController',
+        title: 'Top Streams Hitbox'
       }).
       when('/games/:game', {
         templateUrl: 'partials/game.html',
