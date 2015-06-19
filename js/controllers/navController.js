@@ -1,5 +1,20 @@
 'use strict';
-twitchApp.controller('navController', ['$scope', '$location' , function($scope, $location) {
+twitchApp.controller('navController', ['$scope', '$location', '$http' , function($scope, $location, $http) {
+	var movies = [];
+	 $http.jsonp('https://api.twitch.tv/kraken/streams?limit=200&callback=JSON_CALLBACK').success(function(data) {
+      var items = data.streams;
+      for (var i = 0; i < items.length; i++) {
+        movies.push(items[i].channel.display_name);
+      }
+
+      $scope.movies = movies.filter(function(elem, pos) {
+    	return movies.indexOf(elem) == pos;
+  	}); 
+      console.log(movies);
+});
+
+
+
 
 	$scope.showSearchGames  = function(path){
 		if ($location.path() == '/games'){
@@ -21,5 +36,6 @@ twitchApp.controller('navController', ['$scope', '$location' , function($scope, 
     } else {
       return ""
     }
+
 }
 }]);

@@ -1,5 +1,5 @@
 'use strict';
-var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize', 'ngResource', 'ui.bootstrap']);
+var twitchApp = angular.module('twitchApp', ['ngRoute','infinite-scroll', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'autocomplete']);
 
 
 

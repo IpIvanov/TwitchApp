@@ -20,6 +20,13 @@
 					</ul>
 				</li>
 			</ul>
+
+			<form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <autocomplete ng-model="yourchoice" data="movies" on-type="updateMovies"></autocomplete>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
 			
 			<ul class="nav navbar-nav navbar-right">
 				
