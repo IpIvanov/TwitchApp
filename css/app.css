@@ -359,15 +359,6 @@ footer a:hover i.fa-envelope-o{
 	padding-left: 0;
 }
 
-.autocomplete li{
-  text-align: left;
-  list-style:none;
-  width: 100%;
-  padding:0.4em;
-  background-color: #000;
-  cursor: pointer;
-}
-
 .autocomplete li.active{
   width: 100%;
   background-color: #4bf;
@@ -380,4 +371,13 @@ footer a:hover i.fa-envelope-o{
 .autocomplete li.active .highlight {
   background: #666;
   color: #fff;
+}
+
+.autocomplete li{
+  text-align: left;
+  list-style:none;
+  width: 100%;
+  padding:0.4em;
+  background-color: #000;
+  cursor: pointer;
 }
